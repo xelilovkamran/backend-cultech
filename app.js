@@ -30,6 +30,10 @@ async function main(message) {
   return completion.choices[0];
 }
 
+app.get("/", (req, res) => {
+  res.send({ message: "Hello World" });
+});
+
 app.post("/chatBot", async (req, res) => {
   const { message } = req.body;
   const data = await main(message);
